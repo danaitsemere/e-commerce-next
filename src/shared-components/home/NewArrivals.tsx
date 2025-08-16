@@ -1,31 +1,37 @@
-export default function NewArrival() {
+import Image from "next/image";
+
+export default function NewArrivals() {
   return (
     <section className="py-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-2xl font-bold mb-4">New Arrival</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-gray-100 rounded-lg flex flex-col justify-end p-6" style={{ minHeight: 280 }}>
-            <img src="/ps5.png" alt="PlayStation 5" className="w-full h-32 object-contain" />
+            <Image src="/ps5.png" alt="PlayStation 5" width={400} height={128} className="object-contain" />
             <div>
               <h3 className="font-bold">PlayStation 5</h3>
-              <p className="text-xs">Black and White version of the PS5 coming out on sale.</p>
+              <p className="text-xs">
+                Black and White version of the PS5 coming out on sale.
+              </p>
               <button className="bg-black text-white px-4 py-1 rounded mt-2">Shop Now</button>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-gray-100 rounded-lg p-4 flex flex-col items-center">
-              <img src="/women.png" alt="Women's Collections" className="w-24 h-24 object-contain mb-2" />
-              <h3 className="font-bold">Women's Collections</h3>
-              <p className="text-xs mb-2">Featured woman collections that give you another vibe.</p>
+              <Image src="/women.png" alt="Women&apos;s Collections" width={96} height={96} className="object-contain mb-2" />
+              <h3 className="font-bold">Women&apos;s Collections</h3>
+              <p className="text-xs mb-2">
+                Featured woman collections that give you another vibe.
+              </p>
               <button className="bg-black text-white px-4 py-1 rounded">Shop Now</button>
             </div>
             <div className="bg-gray-100 rounded-lg p-4 flex flex-col items-center">
-              <img src="/speakers.png" alt="Speakers" className="w-24 h-24 object-contain mb-2" />
+              <Image src="/speakers.png" alt="Speakers" width={96} height={96} className="object-contain mb-2" />
               <h3 className="font-bold">Speakers</h3>
               <button className="bg-black text-white px-4 py-1 rounded">Shop Now</button>
             </div>
             <div className="bg-gray-100 rounded-lg p-4 flex flex-col items-center">
-              <img src="/perfume.png" alt="Perfume" className="w-24 h-24 object-contain mb-2" />
+              <Image src="/perfume.png" alt="Perfume" width={96} height={96} className="object-contain mb-2" />
               <h3 className="font-bold">Perfume</h3>
               <button className="bg-black text-white px-4 py-1 rounded">Shop Now</button>
             </div>

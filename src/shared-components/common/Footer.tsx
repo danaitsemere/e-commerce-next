@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="bg-black text-white mt-8">
@@ -7,8 +9,14 @@ export default function Footer() {
           <p className="text-sm mb-2">Subscribe</p>
           <p className="text-xs mb-2">Get 10% off your first order</p>
           <form className="flex">
-            <input type="email" placeholder="Enter your email" className="bg-transparent border-b px-2 py-1 text-white w-full"/>
-            <button type="submit" className="ml-2 text-white">&#10148;</button>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="bg-transparent border-b px-2 py-1 text-white w-full"
+            />
+            <button type="submit" className="ml-2 text-white">
+              &#10148;
+            </button>
           </form>
         </div>
         <div>
@@ -40,19 +48,27 @@ export default function Footer() {
           <h3 className="font-bold mb-3">Download App</h3>
           <p className="text-xs mb-2">Save $3 with App New User Only</p>
           <div className="flex gap-1 mb-2">
-            <img src="/google.svg" alt="Google Play" className="w-20 h-6"/>
-            <img src="/appstore.svg" alt="App Store" className="w-20 h-6"/>
+            <Image src="/google.svg" alt="Google Play" width={80} height={24} />
+            <Image src="/appstore.svg" alt="App Store" width={80} height={24} />
           </div>
           <div className="flex gap-2 mt-2">
-            <a href="#"><span className="sr-only">Facebook</span></a>
-            <a href="#"><span className="sr-only">Twitter</span></a>
-            <a href="#"><span className="sr-only">Instagram</span></a>
-            <a href="#"><span className="sr-only">LinkedIn</span></a>
+            <a href="#" aria-label="Facebook">
+              <span className="sr-only">Facebook</span>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <span className="sr-only">Twitter</span>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <span className="sr-only">Instagram</span>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <span className="sr-only">LinkedIn</span>
+            </a>
           </div>
         </div>
       </div>
       <div className="text-center text-xs py-4 border-t border-gray-800">
-        &copy; Copyright Rimel 2022. All right reserved
+        &copy; Copyright Rimel 2022. All rights reserved
       </div>
     </footer>
   );

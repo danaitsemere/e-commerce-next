@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import TopBar from "../shared-components/common/TopBar";
 import Header from "../shared-components/common/Header";
 import Categories from "../shared-components/home/Categories";

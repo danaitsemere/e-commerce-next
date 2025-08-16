@@ -1,8 +1,10 @@
+import Image from "next/image";
+
 export default function MusicBanner() {
   return (
     <section className="bg-black py-8">
       <div className="max-w-7xl mx-auto flex items-center gap-8 text-white">
-        <img src="/speaker.png" alt="Music Banner" className="w-64 h-auto" />
+        <Image src="/speaker.png" alt="Music Banner" width={256} height={192} className="w-64 h-auto" />
         <div>
           <h3 className="text-green-500">Categories</h3>
           <h2 className="text-2xl font-bold mb-4">Enhance Your Music Experience</h2>
