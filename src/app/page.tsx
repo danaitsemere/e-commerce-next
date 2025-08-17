@@ -12,9 +12,9 @@ export default function HomePage() {
       <TopBar />
       <Header />
       <main className="flex justify-center w-full bg-white">
-        <div className="max-w-[1200px] w-full mx-auto grid grid-cols-12 gap-0 pt-4">
+        <div className="max-w-[1440px] w-full mx-auto grid grid-cols-12 gap-0 pt-4 min-h-[420px]">
           <Categories />
-          <section className="col-span-9 flex flex-col">
+          <section className="col-span-10 flex flex-col h-full ml-35">
             <Banner />
           </section>
         </div>
