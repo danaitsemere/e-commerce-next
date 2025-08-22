@@ -1,44 +1,79 @@
 "use client";
-
 import { useState } from "react";
+import { FcGoogle } from "react-icons/fc";
+import Link from "next/link";
 
 export default function Form() {
-  const [form, setForm] = useState({ name: "", email: "", password: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+  };
+
   return (
-    <form className="space-y-5 w-full">
-      <h2 className="text-2xl font-bold">Create an account</h2>
-      <p className="text-sm">Enter your details below</p>
-      <input
-        type="text"
-        placeholder="Name"
-        className="border-b py-2 w-full outline-none"
-        value={form.name}
-        onChange={e => setForm({ ...form, name: e.target.value })}
-      />
-      <input
-        type="text"
-        placeholder="Email or Phone Number"
-        className="border-b py-2 w-full outline-none"
-        value={form.email}
-        onChange={e => setForm({ ...form, email: e.target.value })}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        className="border-b py-2 w-full outline-none"
-        value={form.password}
-        onChange={e => setForm({ ...form, password: e.target.value })}
-      />
-      <button type="submit" className="bg-pink-600 text-white py-2 rounded font-bold w-full">
-        Create Account
+    <div className="w-full max-w-[380px] mx-auto">
+      <h2 className="text-3xl font-bold mb-2">Create an account</h2>
+      <p className="mb-6 text-gray-700">Enter your details below</p>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          autoComplete="name"
+          className="border-b border-gray-300 bg-transparent py-2 px-1 text-base outline-none"
+          value={form.name}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="text"
+          name="email"
+          placeholder="Email or Phone Number"
+          autoComplete="email"
+          className="border-b border-gray-300 bg-transparent py-2 px-1 text-base outline-none"
+          value={form.email}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          autoComplete="new-password"
+          className="border-b border-gray-300 bg-transparent py-2 px-1 text-base outline-none"
+          value={form.password}
+          onChange={handleChange}
+          required
+        />
+        <button
+          type="submit"
+          className="bg-[#DB4444] hover:bg-[#b91c1c] transition text-white font-semibold rounded-md py-3 text-base mt-2"
+        >
+          Create Account
+        </button>
+      </form>
+      <button
+        type="button"
+        className="flex items-center justify-center border border-gray-300 w-full py-3 rounded-md mt-4 gap-2 font-semibold text-base text-black bg-white hover:bg-gray-100 transition"
+      >
+        <FcGoogle className="text-2xl" />
+        Sign up with Google
       </button>
-      <button type="button" className="border py-2 rounded w-full flex items-center justify-center gap-2">
-        <img src="/google.svg" alt="Google" className="w-5 h-5" /> Sign up with Google
-      </button>
-      <div className="text-center text-sm">
-        Already have account?
-        <a href="/login" className="text-pink-600 ml-2">Log in</a>
-      </div>
-    </form>
+      <p className="mt-7 text-center text-gray-700 text-base">
+        Already have account?{" "}
+        <Link href="/login" className="ml-1 underline text-black">
+          Log in
+        </Link>
+      </p>
+    </div>
   );
 }

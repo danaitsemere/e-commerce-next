@@ -1,22 +1,51 @@
-import Image from "next/image";
+"use client";
+import React from "react";
 
-export default function MusicBanner() {
+const MUSIC_BANNER_IMAGE = "/images/speaker1.png"; 
+
+const countdown = [
+  { value: "23", label: "Hours" },
+  { value: "05", label: "Days" },
+  { value: "59", label: "Minutes" },
+  { value: "35", label: "Seconds" },
+];
+
+const MusicBanner: React.FC = () => {
   return (
-    <section className="bg-black py-8">
-      <div className="max-w-7xl mx-auto flex items-center gap-8 text-white">
-        <Image src="/speaker.png" alt="Music Banner" width={256} height={192} className="w-64 h-auto" />
-        <div>
-          <h3 className="text-green-500">Categories</h3>
-          <h2 className="text-2xl font-bold mb-4">Enhance Your Music Experience</h2>
-          <div className="flex gap-4 mb-4">
-            <div>23 Hours</div>
-            <div>05 Days</div>
-            <div>59 Minutes</div>
-            <div>35 Seconds</div>
+    <section className="w-full rounded-lg overflow-hidden mt-8" style={{ background: "radial-gradient(ellipse at right, #1a1a1a 70%, #000 100%)" }}>
+      <div className="flex flex-col md:flex-row items-center min-h-[400px] px-8 py-10 relative">
+
+        <div className="flex-1 z-10">
+          <div className="mb-2">
+            <span className="text-green-400 font-semibold text-lg">Categories</span>
           </div>
-          <button className="bg-green-500 text-black font-semibold px-6 py-2 rounded">Buy Now!</button>
+          <h2 className="text-white text-4xl md:text-5xl font-bold mb-8 max-w-md leading-tight">
+            Enhance Your<br />Music Experience
+          </h2>
+          <div className="flex gap-4 mb-8">
+            {countdown.map((item, idx) => (
+              <div key={idx} className="flex flex-col items-center justify-center w-20 h-20 bg-white rounded-full shadow-md">
+                <span className="font-bold text-2xl text-black">{item.value}</span>
+                <span className="text-xs text-gray-600">{item.label}</span>
+              </div>
+            ))}
+          </div>
+          <button className="bg-green-400 text-white rounded px-10 py-3 font-semibold text-lg hover:bg-green-500 transition">
+            Buy Now!
+          </button>
+        </div>
+
+        <div className="flex-1 flex justify-end items-end mt-8 md:mt-0">
+          <img
+            src={MUSIC_BANNER_IMAGE}
+            alt="Music Banner Speaker"
+            className="w-[420px] max-w-full object-contain select-none"
+            draggable={false}
+          />
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default MusicBanner;

@@ -25,3 +25,10 @@ body {
   @apply bg-white text-gray-900;
   font-family: Arial, Helvetica, sans-serif;
 }
+.no-scrollbar {
+  scrollbar-width: none; 
+  -ms-overflow-style: none;  
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; 
+}
