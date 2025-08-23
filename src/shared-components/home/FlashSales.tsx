@@ -77,19 +77,9 @@ export default function FlashSales() {
         <div className="mt-4 mb-2 flex items-center space-x-1">
           <button
             type="button"
-            className="w-6 h-6 rounded-full bg-red-600 flex items-center justify-center focus:outline-none"
-            aria-label="Today's Highlight"
+            className="w-3 h-6 rounded bg-[#FF004D] mr-2 "
+            
           >
-            <svg
-              width="14"
-              height="14"
-              fill="none"
-              stroke="white"
-              strokeWidth={2}
-              viewBox="0 0 24 24"
-            >
-              <path d="M13 2L3 14h9l-1 8L21 10h-8l1-8z" />
-            </svg>
           </button>
           <span className="text-red-600 font-semibold text-base">Today's</span>
         </div>
@@ -160,7 +150,7 @@ export default function FlashSales() {
             ))}
           </div>
         </div>
-        <div className="w-full flex justify-center mt-4">
+        <div className="w-full flex justify-center mt-10 -ml-90">
           <button className="bg-red-600 text-white px-6 py-2 rounded font-semibold text-base">
             View All Products
           </button>

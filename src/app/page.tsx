@@ -25,7 +25,7 @@ export default function HomePage() {
             <Banner />
           </div>
         </div>
-        <div className="mt-8">
+        <div className="mt-8 ">
           <FlashSales />
         </div>
         <div className="mt-8">

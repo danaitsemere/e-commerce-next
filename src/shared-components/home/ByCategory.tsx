@@ -14,32 +14,28 @@ const ByCategory: React.FC = () => {
   const [selected, setSelected] = useState("Camera");
 
   return (
-    <div className="py-8">
+    <div className="min-w-[2500px] -ml-18">
       <div className="flex items-center mb-4">
         <div className="w-3 h-6 rounded bg-[#FF004D] mr-2"></div>
         <span className="text-[#FF004D] font-semibold text-lg">ByCategories</span>
       </div>
 
       <h2 className="text-3xl font-bold mb-6">Browse By Category</h2>
-      <div className="flex items-center">
-  
+      <div className="flex items-center -ml-24">
+
         <button
-          className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 mr-4"
-          aria-label="Previous"
+          className="w-20 h-9 flex items-center justify-center rounded-full bg-gray-100 mr-4"
+
         >
-          <svg width="20" height="20" fill="none" stroke="#222" strokeWidth="2" viewBox="0 0 24 24">
-            <path d="M15 19l-7-7 7-7" />
-          </svg>
         </button>
-        <div className="flex gap-4 flex-1">
+        <div className="flex gap-10 flex-1">
           {bycategories.map(({ label, icon }) => (
             <button
               key={label}
-              className={`flex flex-col items-center justify-center border rounded transition-all px-8 py-6 ${
-                selected === label
+              className={`flex flex-col items-center justify-center border rounded transition-all px-16 py-14 ${selected === label
                   ? "bg-[#FF004D] text-white border-[#FF004D] shadow-md"
                   : "bg-white text-black border-gray-300 hover:border-[#FF004D]"
-              }`}
+                }`}
               onClick={() => setSelected(label)}
             >
               <span className="mb-3">
@@ -54,23 +50,20 @@ const ByCategory: React.FC = () => {
                 />
               </span>
               <span
-                className={`font-medium ${
-                  selected === label ? "text-white" : "text-black"
-                }`}
+                className={`font-medium ${selected === label ? "text-white" : "text-black"
+                  }`}
               >
                 {label}
               </span>
             </button>
           ))}
         </div>
-      
+
         <button
           className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 ml-4"
           aria-label="Next"
         >
-          <svg width="20" height="20" fill="none" stroke="#222" strokeWidth="2" viewBox="0 0 24 24">
-            <path d="M9 5l7 7-7 7" />
-          </svg>
+         
         </button>
       </div>
     </div>
