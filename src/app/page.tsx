@@ -31,16 +31,16 @@ export default function HomePage() {
         <div className="mt-8">
           <ByCategory />
         </div>
-        <div className="mt-8">
+        <div className="mt-8 -ml-18 min-w-[1430px]">
           <BestSelling />
         </div>
-        <div className="mt-8">
+        <div className="mt-8 -ml-18">
           <MusicBanner />
-        </div>
-        <div className="mt-8">
+        </div> 
+        <div className="mt-8 -ml-36">
           <OurProducts />
         </div>
-        <div className="mt-8">
+        <div className="mt-8 -ml-36">
           <NewArrival />
         </div>
         <Services />

@@ -12,10 +12,10 @@ const countdown = [
 
 const MusicBanner: React.FC = () => {
   return (
-    <section className="w-full rounded-lg overflow-hidden mt-8" style={{ background: "radial-gradient(ellipse at right, #1a1a1a 70%, #000 100%)" }}>
+    <section className="w-[1420px] rounded-lg overflow-hidden mt-8" style={{ background: "radial-gradient(ellipse at right, #1a1a1a 70%, #000 100%)" }}>
       <div className="flex flex-col md:flex-row items-center min-h-[400px] px-8 py-10 relative">
 
-        <div className="flex-1 z-10">
+        <div className="flex-1 z-10 ml-8">
           <div className="mb-2">
             <span className="text-green-400 font-semibold text-lg">Categories</span>
           </div>
@@ -35,11 +35,11 @@ const MusicBanner: React.FC = () => {
           </button>
         </div>
 
-        <div className="flex-1 flex justify-end items-end mt-8 md:mt-0">
+        <div className="flex-1 flex justify-end items-end mt-8 md:mt-0 mr-3">
           <img
             src={MUSIC_BANNER_IMAGE}
             alt="Music Banner Speaker"
-            className="w-[420px] max-w-full object-contain select-none"
+            className="w-[700px] max-w-full object-contain select-none"
             draggable={false}
           />
         </div>

@@ -1,3 +1,4 @@
+import { FiHeart, FiEye } from "react-icons/fi";
 import Image from "next/image";
 
 interface ProdCardProps {
@@ -5,11 +6,13 @@ interface ProdCardProps {
   image: string;
   price: number;
   oldPrice: number;
-  discount: number;
+  discount?: number;
   rating: number;
   reviews: number;
   isCart?: boolean;
   showButtonOnHover?: boolean;
+  showDiscount?: boolean;
+  iconPositionClassName?: string; 
 }
 
 export default function ProdCard({
@@ -22,6 +25,8 @@ export default function ProdCard({
   reviews,
   isCart = false,
   showButtonOnHover = false,
+  showDiscount = true, 
+  iconPositionClassName = "right-4 top-4",
 }: ProdCardProps) {
   const gradientId = `half-star-${encodeURIComponent(name)}`;
   return (
@@ -29,23 +34,21 @@ export default function ProdCard({
         w-[220px] sm:w-[300px] md:w-[300px] lg:w-[50px] xl:w-[400px]
         flex-shrink-0 relative shadow group transition-all duration-200">
 
-      <span className="absolute left-4 top-4 bg-red-600 text-white text-xs px-2 py-1 rounded">
-        -{discount}%
-      </span>
+    {showDiscount !== false && discount !== undefined && (
+  <span className="absolute left-4 top-4  text-white text-xs px-2 py-1 rounded">
+    -{discount}%
+  </span>
+)}
 
-      <div className="absolute right-4 top-4 flex flex-col gap-2 z-10">
-        <button title="Wishlist" className="bg-white rounded-full p-1 shadow">
-          <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth={1.5}>
-            <path d="M10 18l-1.45-1.32C4.4 12.36 2 10.28 2 7.5 2 5.5 3.5 4 5.5 4c1.54 0 3.04.99 3.57 2.36h1.87C11.46 4.99 12.96 4 14.5 4 16.5 4 18 5.5 18 7.5c0 2.78-2.4 4.86-6.55 9.18L10 18z" />
-          </svg>
-        </button>
-        <button title="View" className="bg-white rounded-full p-1 shadow">
-          <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth={1.5}>
-            <circle cx="10" cy="10" r="3.5" />
-            <path d="M2 10c2-4 6-7 8-7s6 3 8 7-6 7-8 7-6-3-8-7z" />
-          </svg>
-        </button>
-      </div>
+      <div className={`absolute flex flex-col gap-2 z-10 ${iconPositionClassName}`}>
+  <button title="Wishlist" className="bg-white rounded-full p-1 shadow">
+    <FiHeart className=" w-5 h-5" />
+  </button>
+  <button title="View" className="bg-white rounded-full p-1 shadow">
+    <FiEye className="text-gray-700 w-5 h-5" />
+  </button>
+</div>
+
 
       <div className="flex justify-center items-center h-36">
         <Image src={image} alt={name} width={120} height={120} className="object-contain" />
