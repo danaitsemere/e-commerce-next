@@ -1,4 +1,5 @@
 "use client";
+
 import { useRef, useState } from "react";
 import ProdCard from "../../shared-components/common/ProdCard";
 import { ArrowLongLeftIcon, ArrowLongRightIcon } from "@heroicons/react/24/outline";
@@ -57,7 +58,7 @@ const products = [
 ];
 
 export default function FlashSales() {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const [activeCartIndex, setActiveCartIndex] = useState<number | null>(null);
 
@@ -72,18 +73,18 @@ export default function FlashSales() {
   };
 
   return (
-    <section className="w-full overflow-x">
-      <div className="min-w-[2200px] mx-auto -ml-20">
-        <div className="mt-4 mb-2 flex items-center space-x-1">
+    <section className="w-full overflow-hidden">
+      <div className="mx-auto max-w-[1900px] px-4">
+        <div className="mt-4 mb-2 flex items-center space-x-2">
           <button
             type="button"
-            className="w-3 h-6 rounded bg-[#FF004D] mr-2 "
-            
-          >
-          </button>
-          <span className="text-red-600 font-semibold text-base">Today's</span>
+            className="w-3 h-6 rounded bg-[#FF004D]"
+            aria-label="Flash sale indicator"
+          />
+          <span className="text-red-600 font-semibold text-base">Today&apos;s</span>
         </div>
-        <div className="flex items-center mb-5 gap-4">
+
+        <div className="flex items-center mb-5 gap-4 justify-between">
           <div className="flex items-center gap-16">
             <h2 className="font-bold text-4xl mb-1">Flash Sales</h2>
             <div className="flex flex-col items-center">
@@ -112,45 +113,50 @@ export default function FlashSales() {
             </div>
           </div>
 
-          <div className="flex gap-3 ml-198">
+          <div className="flex gap-3">
             <button
               onClick={() => scroll("left")}
               className="bg-gray-100 rounded-full p-3 focus:outline-none flex items-center justify-center"
+              aria-label="Scroll left"
             >
               <ArrowLongLeftIcon className="w-6 h-6 text-red-600" />
             </button>
             <button
               onClick={() => scroll("right")}
-              className="bg-gray-100 rounded-full p-5 flex items-center justify-center focus:outline-none"
+              className="bg-gray-100 rounded-full p-3 flex items-center justify-center focus:outline-none"
+              aria-label="Scroll right"
             >
-              <ArrowLongRightIcon className="w-6 h-6 text-red-600" />
+              <ArrowLongRightIcon className="w-6 h-6 text-red-600 mr-23" />
             </button>
           </div>
         </div>
+
         <div className="pb-2 overflow-x-visible">
           <div
             ref={scrollRef}
-            className="flex gap-4 w-full overflow-x-auto scroll-smooth no-scrollbar"
-            style={{ paddingLeft: "12px", paddingRight: "12px" }}
+            className="flex gap-4 overflow-x-auto scroll-smooth no-scrollbar"
+            style={{ paddingLeft: 12, paddingRight: 12 }}
           >
             {products.map((p, i) => (
               <div
                 key={i}
-                className="transition-all duration-200"
-
+                className="transition-all duration-200 flex-shrink-0"
+                style={{ minWidth: 280, maxWidth: 350 }} 
                 onClick={() => setActiveCartIndex(i)}
               >
                 <ProdCard
                   {...p}
                   isCart={activeCartIndex === i}
                   showButtonOnHover={false}
-                  showButtonPlaceholder={true} 
+                  showButtonPlaceholder={true}
+                  iconPositionClassName = "right-12 top-4"
                 />
               </div>
             ))}
           </div>
         </div>
-        <div className="w-full flex justify-center mt-10 -ml-90">
+
+        <div className="w-full flex justify-center mt-10">
           <button className="bg-red-600 text-white px-6 py-2 rounded font-semibold text-base">
             View All Products
           </button>

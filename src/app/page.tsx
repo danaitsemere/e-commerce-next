@@ -13,37 +13,40 @@ import Footer from "../shared-components/common/Footer";
 
 export default function HomePage() {
   return (
-    <main className="bg-[#FFF] min-h-screen w-full">
+    <main className="bg-[#FFF] min-h-screen w-full overflow-hidden">
       <TopBar />
       <Header />
-      <div className="max-w-7xl mx-auto ">
+      <div className="min-w-8xl mx-auto ">
         <div className="grid grid-cols-13 gap-8 mt-8">
-          <div className="col-span-2  min-w-[500px] -ml-20 ">
+          <div className="col-span-2  min-w-[500px] ml-29 ">
             <Categories />
           </div>
-          <div className="col-span-10 min-w-[1100px] mx-auto ml-15 h-94">
+          <div className="col-span-10 min-w-[1100px] mx-auto ml-47 h-94">
             <Banner />
           </div>
         </div>
-        <div className="mt-8 ">
+        <div className="mt-8  ml-25">
           <FlashSales />
         </div>
-        <div className="mt-8">
+        <div className="mt-8 ml-48">
           <ByCategory />
         </div>
-        <div className="mt-8 -ml-18 min-w-[1430px]">
+        <div className="mt-8 mr-1">
           <BestSelling />
         </div>
-        <div className="mt-8 -ml-18">
+        <div className="mt-8 ml-32">
           <MusicBanner />
         </div> 
-        <div className="mt-8 -ml-36">
+        <div className="mt-8 -ml-17">
           <OurProducts />
         </div>
-        <div className="mt-8 -ml-36">
-          <NewArrival />
-        </div>
+        <div className="mt-8 ml-35 max-w-[1400px]">
+          <NewArrival  />
+        </div >
+         <div className="mt-12 ">
         <Services />
+        </div>
+        
       </div>
       <Footer />
     </main>

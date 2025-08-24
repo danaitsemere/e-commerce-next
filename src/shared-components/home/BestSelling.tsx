@@ -10,7 +10,7 @@ const products = [
 export default function BestSelling() {
   return (
     <section className="py-10 bg-white">
-      <div className="max-w-10xl mx-auto">
+      <div className="max-w-[1410px] mx-auto">
         <div className="mt-4 mb-2 flex items-center space-x-1">
           <button
             type="button"

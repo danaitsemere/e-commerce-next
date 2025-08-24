@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 
 const bycategories = [
   { label: "Phones", icon: "/images/Category-CellPhone.svg" },
@@ -16,15 +17,15 @@ const ByCategory: React.FC = () => {
   return (
     <div className="min-w-[2500px] -ml-18">
       <div className="flex items-center mb-4">
-        <div className="w-3 h-6 rounded bg-[#FF004D] mr-2"></div>
-        <span className="text-[#FF004D] font-semibold text-lg">ByCategories</span>
+        <div className="w-3 h-6 rounded bg-red-600 mr-2"></div>
+        <span className="text-red-600 font-semibold text-lg">ByCategories</span>
       </div>
 
       <h2 className="text-3xl font-bold mb-6">Browse By Category</h2>
       <div className="flex items-center -ml-24">
 
         <button
-          className="w-20 h-9 flex items-center justify-center rounded-full bg-gray-100 mr-4"
+          className="w-25 h-9 flex items-center justify-center rounded-full bg-gray-100 mr-4"
 
         >
         </button>
@@ -39,7 +40,7 @@ const ByCategory: React.FC = () => {
               onClick={() => setSelected(label)}
             >
               <span className="mb-3">
-                <img
+                <Image
                   src={icon}
                   alt={label}
                   width={40}

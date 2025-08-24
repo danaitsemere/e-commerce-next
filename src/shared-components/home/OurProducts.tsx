@@ -35,7 +35,7 @@ const products = [
   },
   {
     name: "Curology Product Set",
-    image: "/images/12.png",
+    image: "/images/13.png",
     price: 500,
     oldPrice: 550,
     rating: 4,
@@ -88,7 +88,7 @@ const products = [
 export default function OurProducts() {
   return (
     <section className="py-8 bg-white">
-      <div className="max-w-7xl mx-auto">
+      <div className=" max-w-[1340px] mx-auto">
         <div className="flex items-center mb-4">
           <div className="w-3 h-6 rounded bg-[#FF004D] mr-2"></div>
           <span className="text-[#FF004D] font-semibold text-lg">Our Products</span>
@@ -103,13 +103,14 @@ export default function OurProducts() {
               image={prod.image}
               price={prod.price}
               oldPrice={prod.oldPrice}
-              discount={prod.discount}
+             
               rating={prod.rating}
               reviews={prod.reviews}
               isCart={prod.addToCart || false}
               showButtonOnHover={false}
               showDiscount={prod.discount !== undefined}
-              iconPositionClassName="right-4 top-4"
+              iconPositionClassName="right-18 top-4"
+              colors={idx >= products.length - 4 ? prod.colors : []}
             />
           ))}
         </div>

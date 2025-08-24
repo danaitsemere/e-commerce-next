@@ -24,6 +24,7 @@ export default function Form() {
       <h2 className="text-3xl font-bold mb-2">Create an account</h2>
       <p className="mb-6 text-gray-700">Enter your details below</p>
       <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+
         <input
           type="text"
           name="name"
@@ -34,6 +35,7 @@ export default function Form() {
           onChange={handleChange}
           required
         />
+
         <input
           type="text"
           name="email"
@@ -44,6 +46,7 @@ export default function Form() {
           onChange={handleChange}
           required
         />
+
         <input
           type="password"
           name="password"
@@ -54,6 +57,7 @@ export default function Form() {
           onChange={handleChange}
           required
         />
+        
         <button
           type="submit"
           className="bg-[#DB4444] hover:bg-[#b91c1c] transition text-white font-semibold rounded-md py-3 text-base mt-2"

@@ -16,7 +16,7 @@ export default function Categories() {
       <ul className="space-y-4 mt-10 mb-12 ">
       {categories.map((cat, idx) => (
   <li key={idx} 
-  className="flex items-center gap-6 cursor-pointer text-lg hover:text-pink-600 font-medium">
+  className="flex items-center gap-6 cursor-pointer text-lg hover:text-red-600 font-medium">
   <span className="w-55 inline-block">{cat}</span>
   <span className="w-0 flex justify-center">
     {(cat === "Woman’s Fashion" || cat === "Men’s Fashion") ? (

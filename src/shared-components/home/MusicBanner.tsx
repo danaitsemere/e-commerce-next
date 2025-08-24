@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 
-const MUSIC_BANNER_IMAGE = "/images/speaker1.png"; 
+const MUSIC_BANNER_IMAGE = "/images/speaker1.png";
 
 const countdown = [
   { value: "23", label: "Hours" },
@@ -12,9 +13,11 @@ const countdown = [
 
 const MusicBanner: React.FC = () => {
   return (
-    <section className="w-[1420px] rounded-lg overflow-hidden mt-8" style={{ background: "radial-gradient(ellipse at right, #1a1a1a 70%, #000 100%)" }}>
+    <section
+      className="w-[1410px] rounded-lg overflow-hidden mt-8"
+      style={{ background: "radial-gradient(ellipse at right, #1a1a1a 70%, #000 100%)" }}
+    >
       <div className="flex flex-col md:flex-row items-center min-h-[400px] px-8 py-10 relative">
-
         <div className="flex-1 z-10 ml-8">
           <div className="mb-2">
             <span className="text-green-400 font-semibold text-lg">Categories</span>
@@ -24,7 +27,10 @@ const MusicBanner: React.FC = () => {
           </h2>
           <div className="flex gap-4 mb-8">
             {countdown.map((item, idx) => (
-              <div key={idx} className="flex flex-col items-center justify-center w-20 h-20 bg-white rounded-full shadow-md">
+              <div
+                key={idx}
+                className="flex flex-col items-center justify-center w-20 h-20 bg-white rounded-full shadow-md"
+              >
                 <span className="font-bold text-2xl text-black">{item.value}</span>
                 <span className="text-xs text-gray-600">{item.label}</span>
               </div>
@@ -36,10 +42,12 @@ const MusicBanner: React.FC = () => {
         </div>
 
         <div className="flex-1 flex justify-end items-end mt-8 md:mt-0 mr-3">
-          <img
+          <Image
             src={MUSIC_BANNER_IMAGE}
             alt="Music Banner Speaker"
-            className="w-[700px] max-w-full object-contain select-none"
+            width={700}
+            height={466} 
+            className="max-w-full object-contain select-none"
             draggable={false}
           />
         </div>
